@@ -9,6 +9,7 @@ function clearMessages(){
 }
 
 function getMoveName(number){
+    let moveName = 'Nieprawidłowy ruch!';
     if (number == 1) {
         moveName = 'kamień';
     }
@@ -17,9 +18,6 @@ function getMoveName(number){
     }
     else if (number == 3){
         moveName = 'nożyce';
-    }
-    else {
-        moveName = 'Nieprawidłowy ruch!';
     }
     return moveName;
 }
@@ -45,15 +43,13 @@ function displayResult(argComputerMove, argPlayerMove){
     printMessage(outcome);
 }
 
-function playGame(playGameInput){
+function playGame(playerInput){
     clearMessages();
-    let playerInput = playGameInput;
-    //let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
     console.log('Gracz wpisał: ' + playerInput);
     let playerMove = `nieznany ruch`;
     playerMove = getMoveName(playerInput);
 
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
     console.log('Wylosowana liczba to: ' + randomNumber);
     let computerMove = 'nieznany ruch';
     computerMove = getMoveName(randomNumber);
