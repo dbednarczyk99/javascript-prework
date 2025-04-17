@@ -1,12 +1,9 @@
 
-let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
-console.log('Gracz wpisał: ' + playerInput);
-let playerMove = `nieznany ruch`;
-playerMove = getMoveName(playerInput);
+let rockButton = document.getElementById('play-rock');
+rockButton.addEventListener('click', function(){playGame(1);});
 
-let randomNumber = Math.floor(Math.random() * 3 + 1);
-console.log('Wylosowana liczba to: ' + randomNumber);
-let computerMove = 'nieznany ruch';
-computerMove = getMoveName(randomNumber);
+let paperButton = document.getElementById('play-paper');
+paperButton.addEventListener('click', function(){playGame(2);});
 
-displayResult(computerMove, playerMove)
+let scissorsButton = document.getElementById('play-scissors');
+scissorsButton.addEventListener('click', function(){playGame(3);});
